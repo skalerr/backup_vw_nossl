@@ -13,14 +13,15 @@ sleep 20
 # tar up backup and encrypt with openssl and encryption key
 tar -czf ${BACKUP_FILE}.tar.gz attachments sends rsa_key*
 
-cd ..
+
 # upload encrypted tar to dropbox
-/dropbox_uploader.sh -f /config/.dropbox_uploader upload /data/${BACKUP_FILE}.tar.gz /${BACKUP_FILE}.tar.gz
+../dropbox_uploader.sh -f ../config/.dropbox_uploader upload /${BACKUP_FILE}.tar.gz /${BACKUP_FILE}.tar.gz
 
 # cleanup tmp folder
-rm /data/${BACKUP_FILE}.tar.gz
-rm /data/db-backup.sqlite3
+rm ${BACKUP_FILE}.tar.gz
+rm db-backup.sqlite3
 
+cd ..
 # delete older backups if variable is set & greater than 0
 if [ ! -z $DELETE_AFTER ] && [ $DELETE_AFTER -gt 0 ]
 then
