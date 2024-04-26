@@ -7,7 +7,7 @@ BACKUP_FILE="bitwardenrs_$(date "+%F-%H%M%S")"
 sqlite3 /data/db.sqlite3 ".backup '/tmp/db.sqlite3'"
 
 # tar up backup and encrypt with openssl and encryption key
-tar -czf - /tmp/db.sqlite3 /data/attachments /data/sends /data/config.json /data/rsa_key* /tmp/${BACKUP_FILE}.tar.gz
+tar -czf - /tmp/db.sqlite3 /data/attachments /tmp/${BACKUP_FILE}.tar.gz
 
 # upload encrypted tar to dropbox
 /dropbox_uploader.sh -f /config/.dropbox_uploader upload /tmp/${BACKUP_FILE}.tar.gz /${BACKUP_FILE}.tar.gz
