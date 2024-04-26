@@ -18,8 +18,8 @@ cd ..
 /dropbox_uploader.sh -f /config/.dropbox_uploader upload /data/${BACKUP_FILE}.tar.gz /${BACKUP_FILE}.tar.gz
 
 # cleanup tmp folder
-
-
+rm /data/${BACKUP_FILE}.tar.gz
+rm /data/db-backup.sqlite3
 
 # delete older backups if variable is set & greater than 0
 if [ ! -z $DELETE_AFTER ] && [ $DELETE_AFTER -gt 0 ]
