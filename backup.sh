@@ -16,7 +16,7 @@ tar -czf /tmp/${BACKUP_FILE}.tar.gz /data/attachments /data/sends /data/rsa_key*
 /dropbox_uploader.sh -f /config/.dropbox_uploader upload /tmp/${BACKUP_FILE}.tar.gz /${BACKUP_FILE}.tar.gz
 
 # cleanup tmp folder
-rm /data/${BACKUP_FILE}.sqlite3*
+
 
 # delete older backups if variable is set & greater than 0
 if [ ! -z $DELETE_AFTER ] && [ $DELETE_AFTER -gt 0 ]
