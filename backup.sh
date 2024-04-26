@@ -7,6 +7,8 @@ BACKUP_FILE="bitwardenrs_$(date "+%F-%H%M%S")"
 
 sqlite3 /data/db.sqlite3 ".backup '/data/${BACKUP_FILE}.sqlite3'"
 
+sleep 20
+
 # tar up backup and encrypt with openssl and encryption key
 tar -czf /tmp/${BACKUP_FILE}.tar.gz /data/attachments /data/sends /data/rsa_key*
 
