@@ -16,7 +16,7 @@ tar -czf ${BACKUP_FILE}.tar.gz ./db-backup.sqlite3 attachments sends rsa_key*
 
 
 # upload encrypted tar to dropbox
-../dropbox_uploader.sh -f ../config/.dropbox_uploader upload /${BACKUP_FILE}.tar.gz /${BACKUP_FILE}.tar.gz
+../dropbox_uploader.sh -f ../config/.dropbox_uploader upload ./${BACKUP_FILE}.tar.gz /${BACKUP_FILE}.tar.gz
 
 # cleanup tmp folder
 rm ${BACKUP_FILE}.tar.gz
