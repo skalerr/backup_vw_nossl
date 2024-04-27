@@ -12,7 +12,7 @@ sleep 20
 
 # tar up backup and encrypt with openssl and encryption key
 
-tar -czf ${BACKUP_FILE}.tar.gz ./db-backup.sqlite3 config.json attachments sends rsa_key*
+tar -czf ${BACKUP_FILE}.tar.gz ./db-backup.sqlite3 attachments sends rsa_key*
 
 
 # upload encrypted tar to dropbox
